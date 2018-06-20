@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FileBrowser from './components/FileBrowser/FileBrowser';
+import PhoneNumber from './components/PhoneNumber/PhoneNumber';
+import TmpHeader from './components/TmpHeader/TmpHeader';
+
+/*import { Observable, from, fromEvent } from 'rxjs';
+import { map, filter, switchMap } from 'rxjs/operators';*/
 
 class App extends Component {
+
+  test(){
+    alert("test ici");
+  }
+
+  componentDidMount() {
+
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <div className="container">zed</div>
+        <TmpHeader />
+        <div className="container">
+        <PhoneNumber />
+          <FileBrowser id="selector" onction={this.test}/>
+        </div>
       </div>
     );
   }
