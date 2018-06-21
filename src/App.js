@@ -23,7 +23,9 @@ class App extends Component {
         <TmpHeader />
         <div className="container">
         <PhoneNumber />
-          <FileBrowser id="selector" onction={this.test}/>
+
+        <FileBrowser id="selector" onction={this.test}/>
+
         </div>
       </div>
     );
