@@ -6,3 +6,7 @@
 	padding: 0.725em!important;
 	line-height: 1.5;
 }
+
+.input-text-centered {
+	text-align: center; 
+}
