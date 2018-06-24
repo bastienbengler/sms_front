@@ -7,6 +7,7 @@
     "jquery": "^3.3.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-google-login-component": "^0.9.3",
     "react-icons": "^2.2.7",
     "react-scripts": "1.1.4",
     "rxjs": "^6.2.1"

@@ -1,10 +1,12 @@
 import React from 'react';
 import './PhoneNumber.css';
+import PropTypes from 'prop-types';
 import Iphone from 'react-icons/lib/io/iphone';
 import { fromEvent } from 'rxjs';
 
 export default class PhoneNumber extends React.Component {
 	static propTypes = {
+		className: PropTypes.string
 	};
 
 	constructor(props) {
@@ -26,10 +28,10 @@ export default class PhoneNumber extends React.Component {
 
 		fromEvent(this.formEl, 'keyup')
 		.subscribe((e) => {
-			this.formEl.checkValidity() === true ? this.state.isFormValid = true : this.state.isFormValid = false;
+			
 
 			this.setState({
-				'isFormValid': this.state.isFormValid
+				'isFormValid': this.formEl.checkValidity() === true ? true : false
 			});
 		});
 			
@@ -38,23 +40,15 @@ export default class PhoneNumber extends React.Component {
 	handleForm() {
 		if (this.formEl.checkValidity()) {
 			alert("ok");
-		} else
-			alert("ko");
+		}
 	}
 
 	render() {
-		/*const props = [...this.props];
-
-        let classNames = [];
-        if (props.className) {
-            classNames = [...props.className];
-            delete props.className;
-		}*/
-
+		//classNames += [" row justify-content-center no-gutters form-inline mb-1"];
 
 		return (
 			<form ref={form => this.formEl = form}
-				className={'needs-validation row justify-content-center no-gutters form-inline mb-1 ' + (this.state.showValidation ? 'was-validated' : '' )} 
+				className={this.props.className + " row justify-content-center no-gutters form-inline mb-1" + (this.state.showValidation ? ' was-validated' : '' )} 
 				id="form_phone_number" onSubmit={(e) => {e.preventDefault(); this.handleForm();}} noValidate>
 					<div className="col-sm-4 col-12 row no-gutters justify-content-center input-group" style={{display: 'inherit'}}>
 						<div className="input-group-prepend">
@@ -67,7 +61,7 @@ export default class PhoneNumber extends React.Component {
 				        </div>
 
 					</div>
-				    <button type="button" className={'col-12 col-sm-1 align-self-start btn adapt-to-icon ' + (this.state.isFormValid === true ? 'btn-success' : 'disabled btn-secondary' )}
+				    <button type="button" className={'col-12 col-sm-2 col-md-2 col-lg-1 align-self-start btn adapt-to-icon ' + (this.state.isFormValid === true ? 'btn-success' : 'disabled btn-secondary' )}
 				     onClick={(e) => {e.preventDefault(); this.handleForm();}}>Submit</button>
 			</form>
 		);
