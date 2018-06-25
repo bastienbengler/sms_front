@@ -44,8 +44,6 @@ export default class PhoneNumber extends React.Component {
 	}
 
 	render() {
-		//classNames += [" row justify-content-center no-gutters form-inline mb-1"];
-
 		return (
 			<form ref={form => this.formEl = form}
 				className={this.props.className + " row justify-content-center no-gutters form-inline mb-1" + (this.state.showValidation ? ' was-validated' : '' )} 

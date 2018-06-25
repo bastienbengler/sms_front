@@ -1,5 +1,7 @@
 import React from 'react';
+import './Login.css';
 import { GoogleLogin } from 'react-google-login-component';
+import Google from 'react-icons/lib/fa/google';
 
 export default class Login extends React.Component{
 
@@ -20,12 +22,15 @@ export default class Login extends React.Component{
     return (
       <div>
         <GoogleLogin socialId="1002721826106-56vr1mevet477d1u1ud8mvc714cj8s9i.apps.googleusercontent.com"
-                     className="google-login"
+                     className="btn btn-success"
                      scope="profile"
                      prompt="select_account"
                      fetchBasicProfile={false}
                      responseHandler={this.responseGoogle}
-                     buttonText="Login With Google"/>
+                     //buttonText="Login With Google"
+                     >
+          <Google className="google-size-icon"/>
+        </GoogleLogin>
       </div>
     );
   }
