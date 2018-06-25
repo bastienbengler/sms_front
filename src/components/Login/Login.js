@@ -27,7 +27,7 @@ export default class Login extends React.Component{
                      prompt="select_account"
                      fetchBasicProfile={false}
                      responseHandler={this.responseGoogle}
-                     //buttonText="Login With Google"
+                     buttonText="&nbsp;Login With Google"
                      >
           <Google className="google-size-icon"/>
         </GoogleLogin>
