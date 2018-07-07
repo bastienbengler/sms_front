@@ -1,9 +1,9 @@
 import React from 'react';
-import './Login.css';
+import './GoogleAuth.css';
 import { GoogleLogin } from 'react-google-login-component';
 import Google from 'react-icons/lib/fa/google';
 
-export default class Login extends React.Component{
+export default class GoogleAuth extends React.Component{
 
   constructor (props, context) {
     super(props, context);
