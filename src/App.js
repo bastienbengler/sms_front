@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import PhoneNumber from './components/PhoneNumber/PhoneNumber';
 
 import FileBrowser from './components/FileBrowser/FileBrowser';
-import PhoneNumber from './components/PhoneNumber/PhoneNumber';
-import TmpHeader from './components/TmpHeader/TmpHeader';
 import GoogleAuth from './components/GoogleAuth/GoogleAuth';
+import Navbar from './components/Navbar/Navbar';
 
 /*import { Observable, from, fromEvent } from 'rxjs';
 import { map, filter, switchMap } from 'rxjs/operators';*/
@@ -22,28 +23,27 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-      <TmpHeader />
-        <Router>
-          <div>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-            </ul>
-            <hr />
-            <Route path="/about" component={PhoneNumber} />
-          </div>
-        </Router>
-        <div className="container">
-          <GoogleAuth />
-          <FileBrowser id="selector"/>
+      <Router>
+        <div className="App">
+        
+        <Navbar className="row col-12 no-gutters" />
 
+          <div className="container">
+            
+            <Route exact={true} path="/" render={() => (
+              <h1> Welcome </h1>
+            )} />
+
+            <Route path="/phone" component={PhoneNumber} />
+
+            <Route path="/googleauth" component={GoogleAuth} />
+
+            <Route path="/filebrowser" component={FileBrowser} />
+
+          </div>
+          
         </div>
-      </div>
+      </Router>
     );
   }
 }
