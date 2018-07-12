@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import PhoneNumber from './components/PhoneNumber/PhoneNumber';
 
 import FileBrowser from './components/FileBrowser/FileBrowser';
@@ -24,11 +24,11 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className="App container">
         
-        <Navbar className="row col-12 no-gutters" />
+        <Navbar className="rounded mb-4" />
 
-          <div className="container">
+          <div>
             
             <Route exact={true} path="/" render={() => (
               <h1> Welcome </h1>

@@ -2,6 +2,7 @@ import React from 'react';
 import './GoogleAuth.css';
 import { GoogleLogin } from 'react-google-login-component';
 import Google from 'react-icons/lib/fa/google';
+import { Router, Route } from "react-router-dom";
 
 export default class GoogleAuth extends React.Component{
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Navbar.css';
 import { Link } from "react-router-dom";
+import TextSms from 'react-icons/lib/io/android-textsms';
+import FileExcel from 'react-icons/lib/fa/file-excel-o';
 
 export default class Navbar extends React.PureComponent {
 	static propTypes = {
@@ -14,9 +17,8 @@ export default class Navbar extends React.PureComponent {
 	render() {
 		return (
 				<nav className={"navbar navbar-expand-lg navbar-dark bg-primary " + this.props.className}>
-					
 
-						<a className="navbar-brand" href="#">Navbar</a>
+						<a className="navbar-brand" href="">Navbar</a>
 						<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 							<span className="navbar-toggler-icon"></span>
 						</button>
@@ -26,20 +28,22 @@ export default class Navbar extends React.PureComponent {
 									<Link className="nav-link" to="/">Home</Link>
 								</li>
 								<li className="nav-item">
-									<Link className="nav-link" to="phone">Phone</Link>
+									<Link className="nav-link" to="phone">
+									{/* Phone */}
+									<TextSms className="sizeIcon"/>
+									</Link>
 								</li>
 								<li className="nav-item">
 									<Link className="nav-link" to="googleauth">Google auth</Link>
 								</li>
 								<li className="nav-item">
-									<Link className="nav-link" to="filebrowser">File Browser</Link>
+									<Link className="nav-link" to="filebrowser">
+									{/* File Browser */}
+									<FileExcel className="sizeIcon"/>
+									</Link>
 								</li>
 							</ul>
 						</div>
-
-						
-
-					
 				</nav>
 		);
 	}
