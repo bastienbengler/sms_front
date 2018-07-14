@@ -11,6 +11,8 @@ import Navbar from './components/Navbar/Navbar';
 /*import { Observable, from, fromEvent } from 'rxjs';
 import { map, filter, switchMap } from 'rxjs/operators';*/
 
+import { ThemeContext } from './auth';
+
 class App extends Component {
 
   test(){
@@ -23,27 +25,29 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div className="App container">
-        
-        <Navbar className="rounded mb-4" />
-
-          <div>
-            
-            <Route exact={true} path="/" render={() => (
-              <h1> Welcome </h1>
-            )} />
-
-            <Route path="/phone" component={PhoneNumber} />
-
-            <Route path="/googleauth" component={GoogleAuth} />
-
-            <Route path="/filebrowser" component={FileBrowser} />
-
-          </div>
+      <ThemeContext.Provider>
+        <Router>
+          <div className="App container">
           
-        </div>
-      </Router>
+          <Navbar className="rounded mb-4" />
+
+            <div>
+              
+              <Route exact={true} path="/" render={() => (
+                <h1> Welcome</h1>
+              )} />
+
+              <Route path="/phone" component={PhoneNumber} />
+
+              <Route path="/googleauth" component={GoogleAuth} />
+
+              <Route path="/filebrowser" component={FileBrowser} />
+
+            </div>
+            
+          </div>
+        </Router>
+      </ThemeContext.Provider>
     );
   }
 }

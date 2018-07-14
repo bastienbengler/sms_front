@@ -44,7 +44,7 @@ export default class PhoneNumber extends React.Component {
 	}
 
 	render() {
-		return (
+		return (	
 			<form ref={form => this.formEl = form}
 				className={this.props.className + " row justify-content-center no-gutters form-inline mb-1" + (this.state.showValidation ? ' was-validated' : '' )} 
 				id="form_phone_number" onSubmit={(e) => {e.preventDefault(); this.handleForm();}} noValidate>

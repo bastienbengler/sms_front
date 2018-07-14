@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
+import { ThemeContext } from '../../auth';
+
 export default class FileBrowser extends React.Component {
 	static propTypes = {
 		fonction: PropTypes.func,
@@ -12,9 +14,11 @@ export default class FileBrowser extends React.Component {
 
 	render() {
 		return (
-			<label className="btn btn-default" onClick={this.props.fonction}>
-            Browse {this.props.test} <input type="file"/>
-        	</label>
+			<ThemeContext.Consumer>
+				{auth => <button theme={auth.token} />
+			}
+				
+			</ThemeContext.Consumer>
 		);
 	}
 }
