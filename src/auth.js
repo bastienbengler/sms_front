@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const auth = {
-    token: "",
+    token: "efdddfdf",
     test: "zaeae"
 };
 

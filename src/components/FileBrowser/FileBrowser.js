@@ -15,7 +15,10 @@ export default class FileBrowser extends React.Component {
 	render() {
 		return (
 			<ThemeContext.Consumer>
-				{auth => <button theme={auth.token} />
+				{auth => 
+
+				<div>{auth.token}</div>
+
 			}
 				
 			</ThemeContext.Consumer>
