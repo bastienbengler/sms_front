@@ -4,6 +4,7 @@ import './Navbar.css';
 import { Link } from "react-router-dom";
 import TextSms from 'react-icons/lib/io/android-textsms';
 import FileExcel from 'react-icons/lib/fa/file-excel-o';
+import Login from 'react-icons/lib/ti/user';
 
 export default class Navbar extends React.PureComponent {
 	static propTypes = {
@@ -34,9 +35,6 @@ export default class Navbar extends React.PureComponent {
 									</Link>
 								</li>
 								<li className="nav-item">
-									<Link className="nav-link" to="googleauth">Google auth</Link>
-								</li>
-								<li className="nav-item">
 									<Link className="nav-link" to="filebrowser">
 									{/* File Browser */}
 									<FileExcel className="sizeIcon"/>
@@ -45,7 +43,7 @@ export default class Navbar extends React.PureComponent {
 							</ul>
 							<ul className="navbar-nav">
 								<li className="nav-item">
-									<Link className="nav-link" to="/login">Login</Link>
+									<Link className="nav-link" to="/login"><Login className="sizeBigIcon" /></Link>
 								</li>
 							</ul>
 						</div>
