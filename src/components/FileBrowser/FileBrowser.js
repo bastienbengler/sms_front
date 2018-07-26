@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-import { ThemeContext } from '../../auth';
 
 export default class FileBrowser extends React.Component {
 	static propTypes = {
@@ -14,14 +13,7 @@ export default class FileBrowser extends React.Component {
 
 	render() {
 		return (
-			<ThemeContext.Consumer>
-				{auth => 
-
-				<div>{auth.token}</div>
-
-			}
-				
-			</ThemeContext.Consumer>
+			<div></div>
 		);
 	}
 }

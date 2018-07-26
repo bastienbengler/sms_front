@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { fromEvent } from 'rxjs';
 
 import GoogleAuth from '../GoogleAuth/GoogleAuth';
+import { connect } from 'react-redux'
+import { Logging } from '../../actions'
 
 class ViewLogin extends Component {
     constructor(props) {
@@ -32,7 +34,7 @@ class ViewLogin extends Component {
 
     handleForm() {
 		if (this.formEl.checkValidity()) {
-			alert("ok");
+            this.props.dispatch(Logging());
 		} else
 		alert("ko");
     }
@@ -88,4 +90,8 @@ ViewLogin.propTypes = {
 
 };
 
-export default ViewLogin;
+const mapStateToProps = state => ({
+    logged: state.auth.logged
+});
+
+export default connect(mapStateToProps)(ViewLogin);
